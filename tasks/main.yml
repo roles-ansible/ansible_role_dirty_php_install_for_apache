@@ -1,3 +1,15 @@
 ---
 - include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
+
+- name: 'install php7.3-*'
+  become: true
+  package:
+    name: "{{ dirty_php_package }}"
+    state: present
+
+- name: install phplib
+  become: true
+  package:
+    name: "{{ dirty_phplib_package }}"
+    state: present
