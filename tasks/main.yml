@@ -5,7 +5,7 @@
 - name: 'install php7.3-*'
   become: true
   package:
-    name: "{{ dirty_php_package }}"
+    name: "{{ dirty_php_packages }}"
     state: present
 
 - name: install phplib
